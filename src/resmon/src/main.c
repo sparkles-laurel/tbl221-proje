@@ -7,6 +7,7 @@
 
 #include <asm-generic/fcntl.h>
 #include <stdio.h>
+#include <syslog.h>
 #include <stdint.h>
 #include <fcntl.h>
 #include <stddef.h>
@@ -17,7 +18,7 @@
 int main(int argc, char **argv) {
     /* Report system resource usage in a way it can be parsed with AWK */
     resmon_version_t ver = { .major = 0, .minor = 0, .build = 0, .edit = 0 };
-    fprintf(stderr, "[ WIP ] resmon %d.%d.%d.%d", ver.major, ver.minor, ver.build, ver.edit);
+    syslog(LOG_DAEMON | LOG_NOTICE, "[ WIP ] resmon %d.%d.%d.%d", ver.major, ver.minor, ver.build, ver.edit);
 
     /* Open resources */
     int cpuinfo_fd = open("/proc/cpuinfo", O_RDONLY);
