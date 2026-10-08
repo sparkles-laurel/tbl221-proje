@@ -9,8 +9,10 @@
 #include <stdio.h>
 #include <syslog.h>
 #include <stdint.h>
-#include <fcntl.h>
 #include <stddef.h>
+#include <string.h>
+#include <errno.h>
+#include <unistd.h>
 #include <sys/resource.h>
 #include "version.h"
 #include <sys/stat.h>
@@ -24,4 +26,18 @@ int main(int argc, char **argv) {
     int cpuinfo_fd = open("/proc/cpuinfo", O_RDONLY);
     int meminfo_fd = open("/proc/meminfo", O_RDONLY);
     int stat_fd = open("/proc/stat", O_RDONLY);
+
+    if(cpuinfo_fd == -1) {
+        syslog(LOG_DAEMON | LOG_ERR, "Failed to open /proc/cpuinfo: %s", strerror(errno));
+        exit(1);
+    }
+    if(meminfo_fd == -1) {
+        syslog(LOG_DAEMON | LOG_ERR, "Failed to open /proc/meminfo: %s", strerror(errno));
+        exit(1);
+    }
+    if(stat_fd == -1) {
+        syslog(LOG_DAEMON | LOG_ERR, "Failed to open /proc/stat: %s", strerror(errno));
+        exit(1);
+    }
+
 }
