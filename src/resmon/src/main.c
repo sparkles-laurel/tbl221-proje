@@ -5,7 +5,6 @@
  * Licensed under 3-Clause BSD License. See LICENSE for more details.
  */
 
-#include <asm-generic/fcntl.h>
 #include <stdio.h>
 #include <syslog.h>
 #include <stdint.h>
