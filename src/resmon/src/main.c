@@ -13,9 +13,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
+#include <fcntl.h>
 #include <unistd.h>
 #include <sys/resource.h>
-#include "version.h"
+#include "include/version.h"
 #include <sys/stat.h>
 
 int main(int argc, char **argv) {
