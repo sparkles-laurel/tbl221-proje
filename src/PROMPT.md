@@ -1,0 +1,2 @@
+# Grup 1 - Linux Sistem Kaynakları İzleme
+Linux üzerinde süreç yönetimi, CPU, bellek ve disk kullanımını araştırınız. `top`, `ps`, `free`, `df` ve `du` komutlarını örneklerle açıklayınız. Bash veya Python kullanarak kaynakları belirli aralıklarla ölçen ve zaman bilgisiyle kaydeden bir uygulama geliştiriniz. Verileri basit bir arayüzde veya grafiklerle gösteriniz; eşik aşımında uyarı oluşturunuz. Uygulamayı systemd servisi olarak çalıştırınız. Normal kullanım, kontrollü yük artışı ve servisin yeniden başlatılmasını test ediniz.
